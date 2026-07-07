@@ -25,20 +25,27 @@
 
     <main>
       <section id="hero">
-        <div class="container">
-          <img src="assets/images/Profile.jpg" alt="Profile Image" />
-          <h1>Dein Honour Davies (MNIP)</h1>
-          <h2>Geoscientist • Data Scientist • Physics Educator</h2>
-          <p>
-            Applied Physics and Geoscience professional passionate about
-            building powered solutions for scientific and engineering
-            challenges. Building software solutions for geoscience, engineering,
-            and scientific research.
-          </p>
-          <div class="hero-buttons">
-            <a href="#projects" class="hero-btn">Projects</a>
-            <a href="#research" class="hero-btn">Research</a>
-            <a href="#physics" class="hero-btn">Physics Academy</a>
+        <div class="container hero-content">
+          <div class="hero-text">
+            <h1>Dein Honour Davies (MNIP)</h1>
+
+            <h2>Geoscientist • Data Scientist • Physics Educator</h2>
+
+            <p>
+              Applied Physics and Geoscience professional building AI-powered
+              solutions for geoscience, engineering, scientific research and
+              STEM education.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="#projects" class="hero-btn">Projects</a>
+              <a href="#research" class="hero-btn">Research</a>
+              <a href="#physics" class="hero-btn">Physics Academy</a>
+            </div>
+          </div>
+
+          <div class="hero-image">
+            <img src="assets/images/Profile.jpg" alt="Dein Honour Davies" />
           </div>
         </div>
       </section>
@@ -91,45 +98,51 @@
       <section id="projects">
         <div class="container">
           <h2>Featured Projects</h2>
-          <div class="project-card">
-            <h3>Lithofacies Classification</h3>
-            <p>
-              <strong>Random Forest Classifier</strong> for automated
-              lithofacies classification on the FORCE 2020 dataset — achieving
-              <strong>90.6% accuracy</strong>.
-            </p>
-            <p>
-              <em
-                >Skills: Python, Machine Learning, Scikit-learn, Pandas, Jupyter
-                Notebooks</em
+          <!-- This is the main grid wrapper -->
+          <div class="projects-grid">
+            <div class="project-card">
+              <h3>Lithofacies Classification</h3>
+              <p>
+                <strong>Random Forest Classifier</strong> for automated
+                lithofacies classification on the FORCE 2020 dataset — achieving
+                <strong>90.6% accuracy</strong>.
+              </p>
+              <p>
+                <em
+                  >Skills: Python, Machine Learning, Scikit-learn, Pandas,
+                  Jupyter Notebooks</em
+                >
+              </p>
+              <a
+                href="https://github.com/dhdaviescode-star/lithofacies-classification-force2020"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+                >View on GitHub →</a
               >
-            </p>
-            <a
-              href="https://github.com/dhdaviescode-star/lithofacies-classification-force2020"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="project-link"
-              >View on GitHub →</a
-            >
+            </div>
+            <!-- Second Project Card -->
+            <div class="project-card">
+              <h3>This Portfolio Website</h3>
+              <p>
+                A responsive portfolio website built using
+                <strong>HTML, CSS and JavaScript</strong>, showcasing my
+                research and educational initiatives.
+              </p>
+              <p><em>Skills: HTML, CSS, JavaScript, Responsive Design</em></p>
+              <a
+                href="https://github.com/dhdaviescode-star/Profile_Card_Page"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+                >View on GitHub →</a
+              >
+            </div>
+            <!-- This closes the second project card -->
           </div>
-
-          <div class="project-card">
-            <h3>This Portfolio Website</h3>
-            <p>
-              A responsive portfolio website built using
-              <strong>HTML, CSS and JavaScript</strong>, showcasing my research
-              and educational initiatives.
-            </p>
-            <p><em>Skills: HTML, CSS, JavaScript, Responsive Design</em></p>
-            <a
-              href="https://github.com/dhdaviescode-star/Profile_Card_Page"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="project-link"
-              >View on GitHub →</a
-            >
-          </div>
+          <!-- This closes the projects grid -->
         </div>
+        <!-- This closes the Projects container -->
       </section>
 
       <section id="physics">
@@ -145,46 +158,57 @@
           <p>Content coming soon.</p>
         </div>
       </section>
-
       <section id="contact">
         <div class="container">
+          <!-- This is the contact section container -->
           <h2>Contact</h2>
-          <div class="contact-section">
+          <!-- 🔴 Added the heading -->
+
+          <!-- 🔴 Added the required contact-content wrapper box -->
+          <div class="contact-content">
+            <p>
+              Interested in collaborating on research, software development,
+              geoscience, data science, or STEM education?
+            </p>
             <a href="mailto:dhdavies.code@gmail.com" class="contact-btn">
-              Contact Me
+              Let's Talk
             </a>
           </div>
+          <!-- 🔴 Closes the contact-content wrapper -->
         </div>
+        <!-- This closes the contact section container -->
       </section>
     </main>
 
     <footer>
-      <p>© 2026 Dein Honour Davies. All rights reserved.</p>
-      <div class="social-links">
-        <a
-          href="https://github.com/dhdavies"
-          target="_blank"
-          rel="noopener noreferrer"
-          >GitHub</a
-        >
-        <a
-          href="https://www.linkedin.com/in/dhdavies"
-          target="_blank"
-          rel="noopener noreferrer"
-          >LinkedIn</a
-        >
-        <a
-          href="https://www.facebook.com/dhdavies.code"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Facebook</a
-        >
-        <a
-          href="https://twitter.com/dhdavies"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Twitter</a
-        >
+      <div class="container">
+        <p>© 2026 Dein Honour Davies. All rights reserved.</p>
+        <div class="social-links">
+          <a
+            href="https://github.com/dhdavies"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          <a
+            href="https://www.linkedin.com/in/dein-davies-522490412/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+          <a
+            href="https://www.facebook.com/dhdavies.code"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Facebook</a
+          >
+          <a
+            href="https://twitter.com/dhdavies"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Twitter</a
+          >
+        </div>
       </div>
     </footer>
 
