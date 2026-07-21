@@ -190,11 +190,19 @@ nav {
   min-height: 80px;
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--clr-primary);
-  letter-spacing: 1px;
+/*======================================
+  LOGO
+======================================*/
+
+.logo img{
+    height:55px;
+    width:auto;
+    display:block;
+    transition:transform .3s ease;
+}
+
+.logo img:hover{
+    transform:scale(1.05);
 }
 
 .nav-links {
