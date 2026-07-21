@@ -2,14 +2,22 @@
 1. CSS VARIABLES 
 ===============================*/
 :root {
-  /* Colors */
+  /* Brand Colors */
   --clr-primary: #0b1f3a;
   --clr-secondary: #5b3b8c;
   --clr-accent: #d4af37;
+
+  /* Background Colors */
   --clr-background: #f8f9fb;
   --clr-surface: #ffffff;
+
+  /* Text Colors */
   --clr-text: #1f2937;
   --clr-text-light: #6b7280;
+
+  /* Effects */
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.12);
 
   /* Typography */
   --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -34,6 +42,37 @@
   --transition-normal: 0.3s ease;
   --transition-slow: 0.5s ease;
 }
+
+/*======================================
+  BUTTON COMPONENTS
+======================================*/
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: var(--space-md) var(--space-lg);
+
+  border-radius: var(--radius);
+
+  font-weight: 600;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.btn-primary {
+  background: var(--clr-primary);
+  color: var(--clr-surface);
+}
+
+.btn-primary:hover {
+  background: var(--clr-secondary);
+  transform: translateY(-3px);
+}
+
 /* ==============================
 2. RESET
 ===============================*/
@@ -70,6 +109,8 @@ a {
 
 section {
   padding: var(--space-xl) 0;
+
+  position: relative;
 }
 
 /* 
@@ -93,6 +134,27 @@ h2 {
 h3 {
   font-size: 1.3rem;
 }
+
+/* Section Heading Enhancement */
+section h2 {
+  position: relative;
+  display: inline-block;
+}
+
+section > .container > h2::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -8px;
+
+  width: 60px;
+  height: 3px;
+
+  background: var(--clr-accent);
+}
+
 p {
   margin-bottom: var(--space-md);
   color: var(--clr-text-light);
@@ -108,6 +170,17 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+
+/* Mobile Menu Button */
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--clr-primary);
 }
 
 nav {
@@ -141,6 +214,61 @@ nav {
 .nav-links a:hover {
   color: var(--clr-accent);
   transform: translateY(-2px);
+}
+
+.nav-links a.active {
+  color: var(--clr-accent);
+}
+
+/*======================================
+  BUTTON COMPONENT
+======================================*/
+.btn {
+  display: inline-block;
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--clr-primary);
+  color: var(--clr-surface);
+}
+
+.btn-primary:hover {
+  background: var(--clr-secondary);
+  transform: translateY(-3px);
+}
+
+/*======================================
+  SECTION HEADING COMPONENT
+======================================*/
+
+.section-heading {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.section-heading h2 {
+  position: relative;
+  display: inline-block;
+}
+
+.section-heading h2::after {
+  content: "";
+  position: absolute;
+
+  width: 60%;
+  height: 3px;
+
+  background: var(--clr-accent);
+
+  bottom: -10px;
+  left: 50%;
+
+  transform: translateX(-50%);
 }
 
 /*===============================
@@ -177,6 +305,7 @@ nav {
 .hero-image {
   display: flex;
   justify-content: center;
+  animation-delay: 0.3s;
 }
 
 .hero-image img {
@@ -188,24 +317,20 @@ nav {
   box-shadow: var(--shadow);
 }
 
+.hero-text,
+.hero-image {
+  animation: fadeUp 1s ease forwards;
+}
+
 .hero-buttons {
   display: flex;
   gap: var(--space-md);
   flex-wrap: wrap;
 }
 
-.hero-btn {
-  display: inline-block;
-  padding: var(--space-md) var(--space-lg);
-  border-radius: var(--radius);
-  background: var(--clr-primary);
-  color: var(--clr-surface);
-  font-weight: 600;
-  transition: all var(--transition-normal);
-}
-
 .hero-btn:hover {
-  background: var(--clr-secondary);
+  background: var(--clr-accent);
+  color: var(--clr-primary);
   transform: translateY(-3px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
@@ -229,11 +354,17 @@ nav {
 }
 
 .service-card {
-  background: var(--clr-background);
-  padding: var(--space-lg);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  transition: all var(--transition-normal);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.service-card: nth-child(1) {
+  animation-delay: 0.2s;
+}
+.service-card: nth-child(2) {
+  animation-delay: 0.4s;
+}
+.service-card: nth-child(3) {
+  animation-delay: 0.6s;
 }
 
 .service-card:hover {
@@ -251,16 +382,34 @@ nav {
 }
 
 /*======================================
+  CARD COMPONENTS
+======================================*/
+.card {
+  background: var(--clr-surface);
+  padding: var(--space-lg);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+
+  transition: all var(--transition-normal);
+}
+
+.card h3 {
+  color: var(--clr-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+
+/*======================================
   8. SKILLS
 ======================================*/
 
 #skills {
   background: var(--clr-background);
-}
-
-#skills h2 {
-  text-align: center;
-  margin-bottom: var(--space-xl);
 }
 
 .skills-container {
@@ -302,21 +451,27 @@ nav {
   background: var(--clr-surface);
 }
 
-#projects h2 {
-  text-align: center;
-  margin-bottom: var(--space-xl);
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
 }
-.project-card {
-  background: var(--clr-surface);
-  padding: var(--space-lg);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
 
+.project-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
-  transition: all var(--transition-normal);
+  animation: fadeUp 0.8s ease forwards;
+
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.project-card: nth-child(1) {
+  animation-delay: 0.2s;
+}
+.project-card: nth-child(2) {
+  animation-delay: 0.4s;
 }
 
 .project-card:hover {
@@ -326,25 +481,50 @@ nav {
 
 .project-card h3 {
   color: var(--clr-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.project-card p {
+  margin-bottom: var(--space-md);
+  color: var(--clr-text-light);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.project-tags span {
+  background: var(--clr-background);
+  color: var(--clr-primary);
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
 .project-card p:last-of-type {
   margin-bottom: var(--space-lg);
 }
 
-.project-link {
-  display: inline-block;
-  padding: 0.8rem 1.5rem;
-  background: var(--clr-primary);
-  color: var(--clr-surface);
-  border-radius: var(--radius);
-  font-weight: 600;
-  transition: all var(--transition-normal);
-}
-
 .project-link:hover {
   background: var(--clr-secondary);
+
   transform: translateY(-3px);
+}
+
+.project-card em {
+  display: block;
+
+  margin-top: var(--space-md);
+
+  color: var(--clr-secondary);
+
+  font-size: 0.9rem;
 }
 
 /*======================================
@@ -366,16 +546,6 @@ nav {
 .contact-content p {
   margin-bottom: var(--space-xl);
   font-size: 1.1rem;
-}
-
-.contact-btn {
-  display: inline-block;
-  padding: var(--space-md) var(--space-lg);
-  border-radius: var(--radius);
-  background: var(--clr-primary);
-  color: var(--clr-surface);
-  font-weight: 600;
-  transition: all var(--transition-normal);
 }
 
 .contact-btn:hover {
@@ -418,6 +588,19 @@ footer p {
 /* ============================
 12. UTILITIES
 ============================== */
+
+/*======================================
+  CARD COMPONENT
+======================================*/
+
+.card {
+  background: var(--clr-surface);
+  padding: var(--space-lg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
 .container {
   width: min(90%, var(--container-width));
   margin-inline: auto;
@@ -448,6 +631,17 @@ footer p {
   transform: translateY(0);
 }
 
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /*======================================
   13. MEDIA QUERIES
 ======================================*/
@@ -458,13 +652,35 @@ footer p {
     justify-content: center;
     gap: var(--space-md);
     padding: var(--space-md) 0;
+    padding: relative;
   }
 
   .nav-links {
     flex-wrap: wrap;
     justify-content: center;
     gap: var(--space-md);
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--clr-surface);
+    padding: var(--space-md);
+    box-shadow: var(--shadow);
   }
+
+  /* Show the menu button: */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* When active: */
+  .nav-links.active {
+    display: flex;
+  }
+
+
 
   /* Hero Section */
   .hero-content {
@@ -504,7 +720,7 @@ footer p {
   /* Projects */
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--space-lg);
   }
 

@@ -12,6 +12,9 @@
     <header>
       <nav class="container">
         <a href="#hero" class="logo">DHD</a>
+         <button class="menu-toggle" aria-label="Toggle Navigation">
+          ☰
+        </button>
         <ul class="nav-links">
           <li><a href="#what-i-do">What I Do</a></li>
           <li><a href="#skills">Skills</a></li>
@@ -38,9 +41,9 @@
             </p>
 
             <div class="hero-buttons">
-              <a href="#projects" class="hero-btn">Projects</a>
-              <a href="#research" class="hero-btn">Research</a>
-              <a href="#physics" class="hero-btn">Physics Academy</a>
+              <a href="#projects" class="btn btn-primary">Projects</a>
+              <a href="#research" class="btn btn-primary">Research</a>
+              <a href="#physics" class="btn btn-primary">Physics Academy</a>
             </div>
           </div>
 
@@ -52,23 +55,25 @@
 
       <section id="what-i-do" class="fade-in">
         <div class="container">
-          <h2>What I Do</h2>
+          <div class="section-heading">
+            <h2>What I Do</h2>
+          </div>
           <div class="services">
-            <div class="service-card">
+            <div class="card service-card">
               <h3>Research</h3>
               <p>
                 Applying geoscience, machine learning, and data analytics to
                 solve complex problems in geoscience and engineering.
               </p>
             </div>
-            <div class="service-card">
+            <div class="card service-card">
               <h3>Teaching</h3>
               <p>
                 Making undergraduate physics accessible through structured
                 lessons, visual explanations, and practical problem solving.
               </p>
             </div>
-            <div class="service-card">
+            <div class="card service-card">
               <h3>Development</h3>
               <p>
                 Developing software and AI-powered tools for scientific
@@ -81,7 +86,9 @@
 
       <section id="skills" class="fade-in">
         <div class="container">
-          <h2>Skills & Expertise</h2>
+          <div class="section-heading">
+            <h2>Skills & Expertise</h2>
+          </div>
           <div class="skills-container">
             <span>HTML/CSS</span>
             <span>JavaScript</span>
@@ -97,11 +104,18 @@
 
       <section id="projects" class="fade-in">
         <div class="container">
-          <h2>Featured Projects</h2>
+          <div class="section-heading">
+            <h2>Featured Projects</h2>
+          </div>
           <!-- This is the main grid wrapper -->
           <div class="projects-grid">
-            <div class="project-card">
+            <div class="card project-card">
               <h3>Lithofacies Classification</h3>
+              <div class="project-tags">
+                <span>Python</span>
+                <span>Machine Learning</span>
+                <span>Geoscience</span>
+              </div>
               <p>
                 <strong>Random Forest Classifier</strong> for automated
                 lithofacies classification on the FORCE 2020 dataset — achieving
@@ -117,13 +131,19 @@
                 href="https://github.com/dhdaviescode-star/lithofacies-classification-force2020"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="project-link"
+                class="btn btn-primary"
                 >View on GitHub →</a
               >
             </div>
             <!-- Second Project Card -->
-            <div class="project-card">
+            <div class="card project-card">
               <h3>This Portfolio Website</h3>
+              <div class="project-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Responsive Design</span>
+              </div>
               <p>
                 A responsive portfolio website built using
                 <strong>HTML, CSS and JavaScript</strong>, showcasing my
@@ -134,7 +154,7 @@
                 href="https://github.com/dhdaviescode-star/Profile_Card_Page"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="project-link"
+                class="btn btn-primary"
                 >View on GitHub →</a
               >
             </div>
@@ -147,21 +167,27 @@
 
       <section id="physics" class="fade-in">
         <div class="container">
-          <h2>Physics Academy</h2>
+          <div class="section-heading">
+            <h2>Physics Academy</h2>
+          </div>
           <p>Content coming soon.</p>
         </div>
       </section>
 
       <section id="research" class="fade-in">
         <div class="container">
-          <h2>Research</h2>
+          <div class="section-heading">
+            <h2>Research</h2>
+          </div>
           <p>Content coming soon.</p>
         </div>
       </section>
       <section id="contact" class="fade-in">
         <div class="container">
           <!-- This is the contact section container -->
-          <h2>Contact</h2>
+          <div class="section-heading">
+            <h2>Contact</h2>
+          </div>
           <!-- 🔴 Added the heading -->
 
           <!-- 🔴 Added the required contact-content wrapper box -->
@@ -170,7 +196,7 @@
               Interested in collaborating on research, software development,
               geoscience, data science, or STEM education?
             </p>
-            <a href="mailto:dhdavies.code@gmail.com" class="contact-btn">
+            <a href="mailto:dhdavies.code@gmail.com" class="btn btn-primary">
               Let's Talk
             </a>
           </div>
