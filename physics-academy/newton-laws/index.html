@@ -2,306 +2,151 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lecture 1: Newton's Laws | Physics Academy</title>
     
-    <!-- Your existing CSS -->
-    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <!-- SEO -->
+    <meta name="description" content="Lecture 1: Newton's Laws - Learn how to solve physics problems involving forces, friction, and acceleration on a horizontal surface. Includes interactive Python calculator." />
+    <meta name="keywords" content="Physics, Newton's Laws, Friction, Acceleration, Nigerian University, PHY105" />
+    <meta name="author" content="Dein Honour Davies" />
     
-    <style>
-        /* ====== LESSON PAGE STYLES ====== */
-        .lesson-header {
-            background: linear-gradient(135deg, #1a2a6c, #2d4373);
-            color: white;
-            padding: 2rem 2rem 1.5rem;
-            border-radius: 0 0 20px 20px;
-            margin-bottom: 2rem;
-        }
-        .lesson-header h1 {
-            margin: 0;
-            font-size: 2.2rem;
-        }
-        .lesson-header .breadcrumb a {
-            color: #fdbb2d;
-            text-decoration: none;
-        }
-        .lesson-header .breadcrumb a:hover {
-            text-decoration: underline;
-        }
-
-        .content-section {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        .big-question {
-            background: #f8f9fa;
-            border-left: 6px solid #b21f1f;
-            padding: 1.2rem 1.8rem;
-            border-radius: 0 10px 10px 0;
-            font-size: 1.1rem;
-            font-style: italic;
-            margin: 1.5rem 0;
-        }
-
-        .key-concept {
-            background: #e8f4fd;
-            border-radius: 10px;
-            padding: 1.2rem 1.8rem;
-            margin: 1.2rem 0;
-            border: 1px solid #b8d4e8;
-        }
-        .key-concept h4 {
-            margin: 0 0 0.4rem;
-            color: #1a2a6c;
-        }
-
-        .solution-steps {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 1.5rem 2rem;
-            margin: 1.5rem 0;
-        }
-        .solution-steps ol {
-            padding-left: 1.2rem;
-        }
-        .solution-steps li {
-            margin-bottom: 0.6rem;
-        }
-
-        /* ====== INTERACTIVE CALCULATOR ====== */
-        .interactive-box {
-            background: #f4f6f8;
-            border: 2px solid #1a2a6c;
-            border-radius: 12px;
-            padding: 1.8rem 2rem;
-            margin: 2rem 0;
-            font-family: 'Segoe UI', system-ui, sans-serif;
-        }
-        .interactive-box h3 {
-            color: #1a2a6c;
-            margin-top: 0;
-        }
-        .input-group {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 10px 20px;
-            margin-bottom: 0.8rem;
-        }
-        .input-group label {
-            font-weight: 500;
-            min-width: 180px;
-        }
-        .input-group input {
-            width: 100px;
-            padding: 8px 12px;
-            border: 2px solid #ced4da;
-            border-radius: 6px;
-            font-size: 1rem;
-            transition: border-color 0.2s;
-        }
-        .input-group input:focus {
-            border-color: #1a2a6c;
-            outline: none;
-        }
-        .interactive-box button {
-            padding: 12px 32px;
-            background: #1a2a6c;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-            margin-top: 0.5rem;
-        }
-        .interactive-box button:hover {
-            background: #2d4373;
-        }
-        .interactive-box button:active {
-            transform: scale(0.97);
-        }
-        #output {
-            margin-top: 1.2rem;
-            background: #0d1117;
-            color: #f0f6fc;
-            padding: 1.2rem 1.5rem;
-            border-radius: 8px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9rem;
-            white-space: pre-wrap;
-            overflow-x: auto;
-            min-height: 120px;
-            border: 1px solid #30363d;
-        }
-
-        /* ====== CODE DISPLAY ====== */
-        .code-block {
-            background: #0d1117;
-            color: #f0f6fc;
-            padding: 1.2rem 1.5rem;
-            border-radius: 8px;
-            overflow-x: auto;
-            font-family: 'Courier New', monospace;
-            font-size: 0.85rem;
-            line-height: 1.6;
-            margin: 1rem 0;
-            border: 1px solid #30363d;
-        }
-        .code-block code {
-            color: #f0f6fc;
-        }
-
-        .nav-links {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin: 2rem 0 1rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #e9ecef;
-        }
-        .nav-links a {
-            color: #1a2a6c;
-            font-weight: 500;
-            text-decoration: none;
-        }
-        .nav-links a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem 0;
-            color: #6c757d;
-            border-top: 1px solid #e9ecef;
-            margin-top: 2rem;
-        }
-
-        @media (max-width: 600px) {
-            .lesson-header h1 { font-size: 1.6rem; }
-            .input-group { flex-direction: column; align-items: stretch; }
-            .input-group label { min-width: auto; }
-            .input-group input { width: 100%; max-width: 200px; }
-        }
-    </style>
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Lecture 1: Newton's Laws | Physics Academy" />
+    <meta property="og:description" content="Learn how to solve physics problems involving forces, friction, and acceleration on a horizontal surface." />
+    <meta property="og:url" content="https://dhdaviescode-star.github.io/dein-davies-website/physics-academy/newton-laws/" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../assets/icons/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/icons/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/icons/apple-touch-icon.png" />
+    
+    <!-- Parent Stylesheet -->
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <!-- Lecture-specific Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
-    <!-- ====== LESSON HEADER ====== -->
-    <header class="lesson-header">
-        <p class="breadcrumb">
-            <a href="../../index.html">Home</a> &gt; 
-            <a href="../index.html">Physics Academy</a> &gt; 
-            <span style="color: #fdbb2d;">Lecture 1</span>
-        </p>
-        <h1>⚛️ Lecture 1: Newton's Laws — Getting Things Moving</h1>
-        <p style="opacity: 0.85; margin: 0.5rem 0 0;">Understanding forces, friction, and acceleration on a horizontal surface.</p>
+    <!-- ====== LECTURE HEADER ====== -->
+    <header class="lecture-header">
+        <div class="container">
+            <p class="breadcrumb">
+                <a href="../../index.html">Home</a> 
+                <span class="separator">/</span> 
+                <a href="../index.html">Physics Academy</a> 
+                <span class="separator">/</span> 
+                <span class="current">Lecture 1</span>
+            </p>
+            <h1>⚛️ Lecture 1: Newton's Laws — Getting Things Moving</h1>
+            <p>Understanding forces, friction, and acceleration on a horizontal surface.</p>
+        </div>
     </header>
 
     <!-- ====== MAIN CONTENT ====== -->
-    <main class="content-section">
+    <main>
+        <div class="container">
 
-        <!-- ====== THE BIG QUESTION ====== -->
-        <section>
-            <h2>📝 The Big Question</h2>
-            <div class="big-question">
-                <strong>"A 5 kg object is placed on a rough horizontal surface. A horizontal force of 30 N is applied. If the coefficient of kinetic friction is 0.4, calculate the acceleration of the object."</strong>
-            </div>
-        </section>
+            <!-- ====== THE BIG QUESTION ====== -->
+            <section class="content-section">
+                <h2>📝 The Big Question</h2>
+                <div class="big-question">
+                    <strong>"A 5 kg object is placed on a rough horizontal surface. A horizontal force of 30 N is applied. If the coefficient of kinetic friction is 0.4, calculate the acceleration of the object."</strong>
+                </div>
+            </section>
 
-        <!-- ====== INTRODUCTION ====== -->
-        <section>
-            <p><strong>🎙️ Professor's Introduction:</strong></p>
-            <blockquote style="background: #f1f3f5; padding: 1rem 1.5rem; border-radius: 8px; margin: 0;">
-                "Good day, brilliant minds! Welcome back to the channel where we demystify physics, one tough exam question at a time. I'm DHDavies, and today, we're tackling a classic problem that tests your understanding of forces and motion. Don't just look for the answer; let's uncover the beautiful physics principles hiding within!"
-            </blockquote>
-        </section>
+            <!-- ====== INTRODUCTION ====== -->
+            <section class="content-section">
+                <h2>🎙️ Professor's Introduction</h2>
+                <div class="professor-quote">
+                    <p>"Good day, brilliant minds! Welcome back to the channel where we demystify physics, one tough exam question at a time. I'm DHDavies, and today, we're tackling a classic problem that tests your understanding of forces and motion. Don't just look for the answer; let's uncover the beautiful physics principles hiding within!"</p>
+                </div>
+            </section>
 
-        <!-- ====== KEY CONCEPTS ====== -->
-        <section>
-            <h2>🧠 What Physics Principle Is Hiding Here?</h2>
-            <p>When you see an object, forces, and a request for acceleration, the first thing that should pop into your mind is <strong>Newton's Second Law of Motion!</strong></p>
+            <!-- ====== KEY CONCEPTS ====== -->
+            <section class="content-section">
+                <h2>🧠 What Physics Principle Is Hiding Here?</h2>
+                <p>When you see an object, forces, and a request for acceleration, the first thing that should pop into your mind is <strong>Newton's Second Law of Motion!</strong></p>
 
-            <div class="key-concept">
-                <h4>🔑 Newton's Second Law (F = ma)</h4>
-                <p>The net force acting on an object is directly proportional to its acceleration and in the same direction as the acceleration.</p>
-                <p><strong>F<sub>net</sub> = ma</strong>, where:</p>
-                <ul>
-                    <li><strong>F<sub>net</sub></strong> = net force (vector sum of all forces)</li>
-                    <li><strong>m</strong> = mass of the object</li>
-                    <li><strong>a</strong> = acceleration of the object</li>
-                </ul>
-            </div>
+                <div class="key-concept">
+                    <h4>🔑 Newton's Second Law (F = ma)</h4>
+                    <p>The net force acting on an object is directly proportional to its acceleration and in the same direction as the acceleration.</p>
+                    <p><strong>F<sub>net</sub> = ma</strong>, where:</p>
+                    <ul>
+                        <li><strong>F<sub>net</sub></strong> = net force (vector sum of all forces)</li>
+                        <li><strong>m</strong> = mass of the object</li>
+                        <li><strong>a</strong> = acceleration of the object</li>
+                    </ul>
+                </div>
 
-            <div class="key-concept">
-                <h4>🔑 Free Body Diagrams (FBD)</h4>
-                <p>Visualize all forces acting on the object. This helps you:</p>
-                <ul>
-                    <li>Identify all forces (weight, normal, applied, friction)</li>
-                    <li>Represent forces as vectors from the center of the object</li>
-                    <li>Choose a coordinate system (x and y axes)</li>
-                </ul>
-            </div>
+                <div class="key-concept">
+                    <h4>🔑 Free Body Diagrams (FBD)</h4>
+                    <p>Visualize all forces acting on the object. This helps you:</p>
+                    <ul>
+                        <li>Identify all forces (weight, normal, applied, friction)</li>
+                        <li>Represent forces as vectors from the center of the object</li>
+                        <li>Choose a coordinate system (x and y axes)</li>
+                    </ul>
+                </div>
 
-            <div class="key-concept">
-                <h4>🔑 Friction (Kinetic)</h4>
-                <p>Kinetic friction opposes ongoing motion. The formula is:</p>
-                <p><strong>F<sub>friction</sub> = μ<sub>k</sub> × N</strong>, where:</p>
-                <ul>
-                    <li><strong>μ<sub>k</sub></strong> = coefficient of kinetic friction</li>
-                    <li><strong>N</strong> = normal force (on a horizontal surface, N = mg)</li>
-                </ul>
-            </div>
-        </section>
+                <div class="key-concept">
+                    <h4>🔑 Friction (Kinetic)</h4>
+                    <p>Kinetic friction opposes ongoing motion. The formula is:</p>
+                    <p><strong>F<sub>friction</sub> = μ<sub>k</sub> × N</strong>, where:</p>
+                    <ul>
+                        <li><strong>μ<sub>k</sub></strong> = coefficient of kinetic friction</li>
+                        <li><strong>N</strong> = normal force (on a horizontal surface, N = mg)</li>
+                    </ul>
+                </div>
+            </section>
 
-        <!-- ====== SOLUTION STEPS ====== -->
-        <section>
-            <h2>✏️ Solving the Problem</h2>
-            <div class="solution-steps">
-                <ol>
-                    <li><strong>Draw the Free Body Diagram:</strong> Weight (down), Normal (up), Applied Force (right), Friction (left).</li>
-                    <li><strong>Vertical forces balance:</strong> N = mg = 5 × 9.8 = 49 N</li>
-                    <li><strong>Calculate friction:</strong> F<sub>friction</sub> = 0.4 × 49 = 19.6 N</li>
-                    <li><strong>Apply Newton's Second Law horizontally:</strong> F<sub>applied</sub> − F<sub>friction</sub> = ma</li>
-                    <li><strong>Solve:</strong> 30 − 19.6 = 5a → a = 10.4 / 5 = <strong>2.08 m/s²</strong></li>
-                </ol>
-                <p style="font-size: 1.1rem; font-weight: 600; color: #1a2a6c;">✅ Final Answer: <span style="background: #fdbb2d; padding: 2px 12px; border-radius: 4px;">2.08 m/s²</span></p>
-            </div>
-        </section>
+            <!-- ====== SOLUTION STEPS ====== -->
+            <section class="content-section">
+                <h2>✏️ Solving the Problem</h2>
+                <div class="solution-steps">
+                    <ol>
+                        <li><strong>Draw the Free Body Diagram:</strong> Weight (down), Normal (up), Applied Force (right), Friction (left).</li>
+                        <li><strong>Vertical forces balance:</strong> N = mg = 5 × 9.8 = <strong>49 N</strong></li>
+                        <li><strong>Calculate friction:</strong> F<sub>friction</sub> = 0.4 × 49 = <strong>19.6 N</strong></li>
+                        <li><strong>Apply Newton's Second Law horizontally:</strong> F<sub>applied</sub> − F<sub>friction</sub> = ma</li>
+                        <li><strong>Solve:</strong> 30 − 19.6 = 5a → a = 10.4 / 5</li>
+                    </ol>
+                    <div class="final-answer">
+                        ✅ Final Answer: <span>2.08 m/s²</span>
+                    </div>
+                </div>
+            </section>
 
-        <!-- ====== INTERACTIVE PYTHON CALCULATOR ====== -->
-        <section class="interactive-box">
-            <h3>🧪 Try It Yourself!</h3>
-            <p>Change the values below and click <strong>"Calculate Acceleration"</strong> to see how the result changes.</p>
+            <!-- ====== INTERACTIVE PYTHON CALCULATOR ====== -->
+            <section class="interactive-box">
+                <h3>🧪 Try It Yourself!</h3>
+                <p class="interactive-subtitle">Change the values below and click <strong>"Calculate Acceleration"</strong> to see how the result changes.</p>
 
-            <div class="input-group">
-                <label for="mass">Mass (kg):</label>
-                <input type="number" id="mass" value="5.0" step="0.1" min="0.1" />
-            </div>
-            <div class="input-group">
-                <label for="applied-force">Applied Force (N):</label>
-                <input type="number" id="applied-force" value="30.0" step="0.1" min="0" />
-            </div>
-            <div class="input-group">
-                <label for="coeff-friction">Coefficient of Kinetic Friction:</label>
-                <input type="number" id="coeff-friction" value="0.4" step="0.01" min="0" max="1" />
-            </div>
+                <div class="input-group">
+                    <label for="mass">Mass (kg):</label>
+                    <input type="number" id="mass" value="5.0" step="0.1" min="0.1" />
+                </div>
+                <div class="input-group">
+                    <label for="applied-force">Applied Force (N):</label>
+                    <input type="number" id="applied-force" value="30.0" step="0.1" min="0" />
+                </div>
+                <div class="input-group">
+                    <label for="coeff-friction">Coefficient of Kinetic Friction:</label>
+                    <input type="number" id="coeff-friction" value="0.4" step="0.01" min="0" max="1" />
+                </div>
 
-            <button id="run-button">🚀 Calculate Acceleration</button>
+                <button id="run-button" class="btn btn-primary">🚀 Calculate Acceleration</button>
 
-            <div id="output">Click "Calculate Acceleration" to run the Python script.</div>
-        </section>
+                <div id="output">Click "Calculate Acceleration" to run the Python script.</div>
+            </section>
 
-        <!-- ====== PYTHON CODE DISPLAY ====== -->
-        <section>
-            <h3>🐍 The Python Code Behind the Solution</h3>
-            <p>This is the exact script that runs in your browser to solve the problem. You can copy it and run it yourself!</p>
-            <div class="code-block">
-                <code>
+            <!-- ====== PYTHON CODE DISPLAY ====== -->
+            <section class="content-section">
+                <h3>🐍 The Python Code Behind the Solution</h3>
+                <p>This is the exact script that runs in your browser to solve the problem. You can copy it and run it yourself!</p>
+                <div class="code-block">
+                    <code>
 # physics_calculator.py
 # Calculates acceleration of an object on a rough horizontal surface.
 
@@ -325,26 +170,39 @@ else:
     acceleration = net_force / mass
 
 print(f"Final Acceleration: {acceleration:.2f} m/s²")
-                </code>
+                    </code>
+                </div>
+            </section>
+
+            <!-- ====== NAVIGATION ====== -->
+            <div class="nav-links-bottom">
+                <a href="../index.html" class="btn btn-secondary">⬅ Back to Physics Academy</a>
+                <a href="../../index.html" class="btn btn-secondary">🏠 Back to Home</a>
             </div>
-        </section>
 
-        <!-- ====== NAVIGATION ====== -->
-        <div class="nav-links">
-            <a href="../index.html">⬅ Back to Physics Academy</a>
-            <a href="../../index.html">🏠 Back to Home</a>
         </div>
-
     </main>
 
     <!-- ====== FOOTER ====== -->
-    <footer>
-        <p>&copy; 2026 Dein Honour Davies. Built for Nigerian STEM students.</p>
+    <footer class="lecture-footer">
+        <div class="container">
+            <p>&copy; 2026 Dein Honour Davies. All rights reserved.</p>
+            <p>
+                <a href="../../index.html">← Back to Home</a>
+            </p>
+        </div>
     </footer>
 
-    <!-- ====== LOAD PYODIDE & OUR SCRIPT ====== -->
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" title="Back to Top">↑</button>
+
+    <!-- ====== SCRIPTS ====== -->
+    <!-- Pyodide for Python execution -->
     <script src="https://cdn.jsdelivr.net/pyodide/v0.26.1/full/pyodide.js"></script>
-    <script src="script.js"></script>
+    <!-- Lecture-specific JavaScript -->
+    <script src="assets/js/script.js"></script>
+    <!-- Parent JavaScript (for back-to-top, etc.) -->
+    <script src="../../assets/js/script.js"></script>
 
 </body>
 </html>

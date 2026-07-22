@@ -1,0 +1,227 @@
+/* ==================================================
+   PHYSICS ACADEMY - Academy Hub Styles
+   Matches parent website design system
+   ================================================== */
+
+/* ====== ACADEMY HEADER ====== */
+.academy-header {
+    background: var(--clr-primary);
+    color: var(--clr-surface);
+    padding: var(--space-xl) 0;
+    text-align: center;
+    border-bottom: 4px solid var(--clr-accent);
+    margin-bottom: var(--space-xl);
+}
+
+.academy-header h1 {
+    color: var(--clr-surface);
+    margin-bottom: var(--space-small);
+    font-size: 2.8rem;
+}
+
+.academy-header p {
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+.academy-header .breadcrumb {
+    margin-bottom: var(--space-md);
+}
+
+.academy-header .breadcrumb a {
+    color: var(--clr-accent);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-fast);
+}
+
+.academy-header .breadcrumb a:hover {
+    color: var(--clr-surface);
+    text-decoration: underline;
+}
+
+.academy-header .breadcrumb .separator {
+    color: rgba(255, 255, 255, 0.4);
+    margin: 0 8px;
+}
+
+.academy-header .breadcrumb .current {
+    color: var(--clr-accent);
+}
+
+/* ====== PLAYLIST SECTION ====== */
+.playlist-section {
+    background: var(--clr-surface);
+    border-radius: var(--radius);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    box-shadow: var(--shadow-soft);
+    border-left: 6px solid var(--clr-accent);
+}
+
+.playlist-section .section-heading {
+    text-align: left;
+    margin-bottom: var(--space-lg);
+}
+
+.playlist-section .section-heading h2 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: var(--space-small);
+}
+
+.playlist-section .section-heading h2::after {
+    display: none;
+}
+
+.playlist-section .subtitle {
+    color: var(--clr-text-light);
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* ====== LESSON CARDS ====== */
+.lesson-card {
+    background: var(--clr-background);
+    border-radius: var(--radius);
+    padding: var(--space-md) var(--space-lg);
+    margin-bottom: var(--space-md);
+    transition: all var(--transition-normal);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.lesson-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.lesson-card a {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--clr-primary);
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color var(--transition-fast);
+}
+
+.lesson-card a:hover {
+    color: var(--clr-accent);
+}
+
+.lesson-card a.disabled {
+    color: var(--clr-text-light);
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.lesson-card a.disabled .lesson-title {
+    color: var(--clr-text-light);
+}
+
+.lesson-card p {
+    margin: 0.3rem 0 0;
+    color: var(--clr-text-light);
+    font-size: 0.95rem;
+}
+
+/* ====== STATUS BADGES ====== */
+.status-badge {
+    display: inline-block;
+    background: #28a745;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 14px;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.status-badge.coming-soon {
+    background: #ffc107;
+    color: var(--clr-primary);
+}
+
+/* ====== INFO BOX ====== */
+.info-box {
+    background: var(--clr-background);
+    border-radius: var(--radius);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.info-box h3 {
+    color: var(--clr-primary);
+    margin-top: 0;
+}
+
+.info-box p {
+    margin-bottom: 0;
+}
+
+/* ====== ACADEMY FOOTER ====== */
+.academy-footer {
+    background: var(--clr-primary);
+    color: var(--clr-surface);
+    padding: var(--space-lg) 0;
+    margin-top: var(--space-xl);
+}
+
+.academy-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-lg);
+    flex-wrap: wrap;
+}
+
+.academy-footer p {
+    color: var(--clr-surface);
+    margin: 0;
+}
+
+.academy-footer a {
+    color: var(--clr-accent);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.academy-footer a:hover {
+    color: var(--clr-surface);
+    text-decoration: underline;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+    .academy-header h1 {
+        font-size: 2rem;
+    }
+    
+    .academy-header p {
+        font-size: 1rem;
+        padding: 0 var(--space-md);
+    }
+    
+    .playlist-section {
+        padding: var(--space-md);
+    }
+    
+    .lesson-card {
+        padding: var(--space-md);
+    }
+    
+    .lesson-card a {
+        font-size: 1rem;
+    }
+    
+    .academy-footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
