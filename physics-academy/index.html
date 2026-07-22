@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Physics Academy | Dein Davies</title>
+    
+    <!-- Your existing CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    
+    <style>
+        /* Additional styles specific to the Physics Academy */
+        .academy-header {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 2rem;
+        }
+        .academy-header h1 {
+            font-size: 2.8rem;
+            margin: 0;
+        }
+        .academy-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0.5rem auto 0;
+        }
+        .playlist-section {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 6px solid #1a2a6c;
+        }
+        .playlist-section h2 {
+            color: #1a2a6c;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .lesson-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #e9ecef;
+        }
+        .lesson-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        }
+        .lesson-card a {
+            text-decoration: none;
+            color: #1a2a6c;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        .lesson-card a:hover {
+            color: #b21f1f;
+        }
+        .lesson-card p {
+            margin: 0.3rem 0 0;
+            color: #6c757d;
+            font-size: 0.95rem;
+        }
+        .status-badge {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-left: 10px;
+        }
+        .status-badge.coming-soon {
+            background: #ffc107;
+            color: #212529;
+        }
+        .back-home {
+            display: inline-block;
+            margin: 1rem 0;
+            color: #1a2a6c;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .back-home:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: #6c757d;
+            border-top: 1px solid #e9ecef;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ====== ACADEMY HEADER ====== -->
+    <header class="academy-header">
+        <h1>⚛️ Physics Academy</h1>
+        <p>Demystifying physics, one exam question at a time — for Nigerian university students.</p>
+        <p style="font-size: 0.9rem; margin-top: 1rem;">
+            <a href="../index.html" style="color: white; text-decoration: underline;">← Back to Home</a>
+        </p>
+    </header>
+
+    <!-- ====== MAIN CONTENT ====== -->
+    <main style="max-width: 960px; margin: 0 auto; padding: 0 1.5rem;">
+
+        <!-- PLAYLIST: Newton's Playground -->
+        <section class="playlist-section">
+            <h2>🎢 Newton's Playground <span style="font-size: 0.8rem; font-weight: normal; color: #6c757d;">(Laws of Motion, Work, Energy, Conservation)</span></h2>
+            
+            <div class="lesson-card">
+                <a href="newton-laws/index.html">
+                    Lecture 1: Newton's Laws — Getting Things Moving
+                    <span class="status-badge">Live</span>
+                </a>
+                <p>Learn how to solve problems involving forces, friction, and acceleration on a horizontal surface. Includes an interactive Python calculator!</p>
+            </div>
+
+            <div class="lesson-card">
+                <a href="#" style="color: #adb5bd; pointer-events: none;">
+                    Lecture 2: Work and Energy — The Transfer of Motion
+                    <span class="status-badge coming-soon">Coming Soon</span>
+                </a>
+                <p>Master the Work-Energy Theorem and learn how energy transforms between kinetic, potential, and thermal forms.</p>
+            </div>
+
+            <div class="lesson-card">
+                <a href="#" style="color: #adb5bd; pointer-events: none;">
+                    Lecture 3: Power — The Rate of Doing Work
+                    <span class="status-badge coming-soon">Coming Soon</span>
+                </a>
+                <p>Understand the relationship between power, force, and velocity in practical contexts.</p>
+            </div>
+
+            <div class="lesson-card">
+                <a href="#" style="color: #adb5bd; pointer-events: none;">
+                    Lecture 4: Conservation of Linear Momentum — The Heart of Collisions
+                    <span class="status-badge coming-soon">Coming Soon</span>
+                </a>
+                <p>Dive into elastic and inelastic collisions, and learn how to solve complex momentum problems.</p>
+            </div>
+
+            <div class="lesson-card">
+                <a href="#" style="color: #adb5bd; pointer-events: none;">
+                    Lecture 5: Impulse — Force Over Time
+                    <span class="status-badge coming-soon">Coming Soon</span>
+                </a>
+                <p>Connect force, time, and momentum change in this deep dive into impulse and its applications.</p>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section style="background: #f1f3f5; border-radius: 12px; padding: 1.5rem 2rem; margin-bottom: 2rem;">
+            <h3 style="color: #1a2a6c; margin-top: 0;">📚 About This Series</h3>
+            <p style="margin-bottom: 0;">
+                This Physics Academy is designed specifically for 100-level Nigerian university students tackling 
+                <strong>PHY 105 (Mechanics and Properties of Matter)</strong>. Each lesson uses past questions from 
+                institutions like UNILAG, UI, UNIBEN, and OAU to teach fundamental physics principles through 
+                active problem-solving. Where necessary, we also reinforce the underlying mathematics.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- ====== FOOTER ====== -->
+    <footer>
+        <p>&copy; 2026 Dein Honour Davies. Built for Nigerian STEM students.</p>
+        <p><a href="../index.html" style="color: #1a2a6c;">← Back to Home</a></p>
+    </footer>
+
+</body>
+</html>
