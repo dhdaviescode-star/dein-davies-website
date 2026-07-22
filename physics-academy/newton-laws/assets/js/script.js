@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
 # Physics Calculator: Acceleration on a Rough Horizontal Surface
 
 # --- Input Parameters (from webpage) ---
-mass = {mass}
-applied_force = {applied_force}
-coefficient_kinetic_friction = {coeff_friction}
+mass = MASS_PLACEHOLDER
+applied_force = FORCE_PLACEHOLDER
+coefficient_kinetic_friction = FRICTION_PLACEHOLDER
 g = 9.81
 
 # --- Calculations ---
@@ -36,7 +36,7 @@ print("     PHYSICS PROBLEM SOLVER")
 print("=" * 45)
 print(f"  Mass:                    {mass:.2f} kg")
 print(f"  Applied Force:           {applied_force:.2f} N")
-print(f"  Coefficient of Friction: {coeff_friction:.2f}")
+print(f"  Coefficient of Friction: {coefficient_kinetic_friction:.2f}")
 print(f"  Gravitational Force:     {gravitational_force:.2f} N")
 print(f"  Normal Force:            {normal_force:.2f} N")
 print(f"  Kinetic Friction Force:  {kinetic_friction_force:.2f} N")
@@ -62,9 +62,9 @@ print("=" * 45)
 
         // 3. Inject values into the Python code
         const pythonCode = pythonCodeTemplate
-            .replace(/{mass}/g, mass)
-            .replace(/{applied_force}/g, appliedForce)
-            .replace(/{coeff_friction}/g, coeffFriction);
+            .replace(/MASS_PLACEHOLDER/g, mass)
+            .replace(/FORCE_PLACEHOLDER/g, appliedForce)
+            .replace(/FRICTION_PLACEHOLDER/g, coeffFriction);
 
         // 4. Show loading state
         outputDiv.textContent = '⏳ Loading Python environment... (first time may take 5–10 seconds)';
@@ -99,7 +99,7 @@ output
 
         } catch (error) {
             console.error('Pyodide error:', error);
-            outputDiv.textContent = `❌ An error occurred: ${error.message || error}`;
+            outputDiv.textContent = `❌ An error occurred:\n${error.message || error}`;
         }
     }
 
