@@ -194,15 +194,15 @@ nav {
   LOGO
 ======================================*/
 
-.logo img{
-    height:55px;
-    width:auto;
-    display:block;
-    transition:transform .3s ease;
+.logo img {
+  height: 55px;
+  width: auto;
+  display: block;
+  transition: transform 0.3s ease;
 }
 
-.logo img:hover{
-    transform:scale(1.05);
+.logo img:hover {
+  transform: scale(1.05);
 }
 
 .nav-links {
@@ -320,7 +320,9 @@ nav {
   width: 320px;
   height: 320px;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 0px 20px 20px 0px;
+  outline: 4px solid var(--clr-accent);
+  outline-offset: 1.5rem;
   border: 6px solid var(--clr-surface);
   box-shadow: var(--shadow);
 }
@@ -687,8 +689,6 @@ footer p {
   .nav-links.active {
     display: flex;
   }
-
-
 
   /* Hero Section */
   .hero-content {
