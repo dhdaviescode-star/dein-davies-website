@@ -51,14 +51,14 @@
     <!-- Parent Stylesheet -->
     <link rel="stylesheet" href="../assets/css/site.css" />
     <!-- Academy-specific Stylesheet -->
-    <link rel="stylesheet" href="assets/css/academy.css">
+    <link rel="stylesheet" href="assets/css/academy.css" />
   </head>
   <body>
     <!-- ====== ACADEMY HEADER ====== -->
     <header class="academy-header">
       <div class="container">
         <p class="breadcrumb">
-          <a href="../index.html">Home</a>
+          <a href="{{ '/' | relative_url }}">Home</a>
           <span class="separator">/</span>
           <span class="current">Physics Academy</span>
         </p>
@@ -84,7 +84,7 @@
           </div>
 
           <div class="lesson-card">
-            <a href="newton-laws/index.html">
+            <a href="{{ '/physics-academy/newton-laws/' | relative_url }}">
               <span class="lesson-title"
                 >Lecture 1: Newton's Laws — Getting Things Moving</span
               >
@@ -172,7 +172,7 @@
       <div class="container">
         <p>&copy; 2026 Dein Honour Davies. All rights reserved.</p>
         <p>
-          <a href="../index.html">← Back to Home</a>
+          <a href="{{ '/' | relative_url }}">← Back to Home</a>
         </p>
       </div>
     </footer>

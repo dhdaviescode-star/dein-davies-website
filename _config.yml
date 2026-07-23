@@ -1,0 +1,45 @@
+title: Dein Honour Davies
+
+description: >
+  Geoscientist • Data Scientist • Physics Educator
+
+url: "https://dhdaviescode-star.github.io"
+
+baseurl: "/dein-davies-website"
+
+markdown: kramdown
+
+permalink: pretty
+
+theme: null
+
+plugins: []
+
+collections:
+
+  lectures:
+    output: true
+
+  assignments:
+    output: true
+
+  quizzes:
+    output: true
+
+  calculators:
+    output: true
+
+defaults:
+
+  -
+    scope:
+      path: ""
+    values:
+      layout: default
+
+  -
+    scope:
+      path: ""
+      type: lectures
+    values:
+      layout: lecture

@@ -1,0 +1,73 @@
+---
+layout: default
+---
+
+<article class="lecture">
+
+    <header class="lecture-header">
+
+        <h1>{{ page.title }}</h1>
+
+        <p>{{ page.description }}</p>
+
+    </header>
+
+    <section class="lecture-content">
+
+        {{ content }}
+
+    </section>
+
+    <section class="lecture-navigation">
+
+        <h2>Continue Learning</h2>
+
+        <ul>
+
+            <li>
+                <a href="{{ page.youtube }}">
+                    ▶ Watch on YouTube
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ page.calculator }}">
+                    Interactive Calculator
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ page.quiz }}">
+                    Quiz
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ page.assignment }}">
+                    Assignment
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ page.related }}">
+                    Related Lecture
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ page.research }}">
+                    Research Insight
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ page.github }}">
+                    GitHub Repository
+                </a>
+            </li>
+
+        </ul>
+
+    </section>
+
+</article>
