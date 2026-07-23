@@ -1,0 +1,63 @@
+# ==========================================
+# PHYSICS ACADEMY COURSE CATALOG
+# ==========================================
+
+- id: mechanics
+  code: PHY105
+  title: Mechanics and Properties of Matter
+  level: 100
+  semester: First
+  color: "#2563eb"
+  icon: "⚙️"
+  description: >
+    Covers Newton's Laws, Work, Energy, Power,
+    Momentum, Circular Motion and Properties of Matter.
+
+- id: electricity
+  code: PHY107
+  title: Electricity and Magnetism
+  level: 100
+  semester: Second
+  color: "#dc2626"
+  icon: "⚡"
+  description: >
+    Electric fields, electric potential,
+    current electricity and magnetism.
+
+- id: waves
+  code: PHY106
+  title: Waves, Optics and Sound
+  level: 100
+  semester: Second
+  color: "#0ea5e9"
+  icon: "🌊"
+  description: >
+    Oscillations, Waves,
+    Geometrical Optics and Physical Optics.
+
+- id: thermodynamics
+  code: PHY204
+  title: Heat and Thermodynamics
+  level: 200
+  semester: First
+  color: "#f97316"
+  icon: "🔥"
+  description: >
+    Temperature,
+    Heat,
+    First Law,
+    Second Law,
+    Entropy.
+
+- id: modern-physics
+  code: PHY301
+  title: Modern Physics
+  level: 300
+  semester: First
+  color: "#7c3aed"
+  icon: "⚛️"
+  description: >
+    Relativity,
+    Quantum Physics,
+    Atomic Structure,
+    Nuclear Physics.

@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    {% include analytics.html %}
 
     {% include head.html %}
 
@@ -12,15 +11,9 @@
 
     {% include header.html %}
 
-    <main>
-
-        {{ content }}
-
-    </main>
+    {{ content }}
 
     {% include footer.html %}
-
-    <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
 
 </body>
 

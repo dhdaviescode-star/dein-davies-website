@@ -11,10 +11,35 @@ markdown: kramdown
 
 permalink: pretty
 
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
+theme: null
+
+plugins: []
 
 collections:
+
   lectures:
     output: true
+
+  assignments:
+    output: true
+
+  quizzes:
+    output: true
+
+  calculators:
+    output: true
+
+defaults:
+
+  -
+    scope:
+      path: ""
+    values:
+      layout: default
+
+  -
+    scope:
+      path: ""
+      type: lectures
+    values:
+      layout: lecture
