@@ -49,16 +49,19 @@
     />
 
     <!-- Parent Stylesheet -->
-    <link rel="stylesheet" href="../assets/css/site.css" />
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
     <!-- Academy-specific Stylesheet -->
-    <link rel="stylesheet" href="assets/css/academy.css">
+    <link
+      rel="stylesheet"
+      href="{{ '/physics-academy/assets/css/academy.css' | relative_url }}"
+    />
   </head>
   <body>
     <!-- ====== ACADEMY HEADER ====== -->
     <header class="academy-header">
       <div class="container">
         <p class="breadcrumb">
-          <a href="../index.html">Home</a>
+          <a href="{{ '/' | relative_url }}">Home</a>
           <span class="separator">/</span>
           <span class="current">Physics Academy</span>
         </p>
@@ -84,7 +87,7 @@
           </div>
 
           <div class="lesson-card">
-            <a href="newton-laws/index.html">
+            <a href="{{ '/physics-academy/newton-laws/' | relative_url }}">
               <span class="lesson-title"
                 >Lecture 1: Newton's Laws — Getting Things Moving</span
               >
@@ -172,7 +175,7 @@
       <div class="container">
         <p>&copy; 2026 Dein Honour Davies. All rights reserved.</p>
         <p>
-          <a href="../index.html">← Back to Home</a>
+          <a href="{{ '/' | relative_url }}">← Back to Home</a>
         </p>
       </div>
     </footer>
@@ -181,8 +184,8 @@
     <button id="backToTopBtn" title="Back to Top">↑</button>
 
     <!-- Parent JavaScript -->
-    <script src="../assets/js/site.js"></script>
+    <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
     <!-- Academy-specific JavaScript -->
-    <script src="assets/js/academy.js"></script>
+    <script src="{{ '/physics-academy/assets/js/academy.js' | relative_url }}"></script>
   </body>
 </html>

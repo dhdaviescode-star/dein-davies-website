@@ -1,0 +1,22 @@
+main:
+
+- title: Home
+  url: /
+
+- title: What I Do
+  url: /#what-i-do
+
+- title: Skills
+  url: /#skills
+
+- title: Projects
+  url: /#projects
+
+- title: Physics Academy
+  url: /physics-academy/
+
+- title: Research
+  url: /#research
+
+- title: Contact
+  url: /#contact

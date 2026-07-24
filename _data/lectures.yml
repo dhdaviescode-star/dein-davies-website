@@ -1,0 +1,37 @@
+# ==========================================
+# PHYSICS ACADEMY LECTURES
+# ==========================================
+
+- id: mech-001
+
+  course: mechanics
+
+  lecture_number: 1
+
+  title: Newton's Laws — Getting Things Moving
+
+  slug: newtons-laws
+
+  youtube:
+
+  calculator:
+
+  quiz:
+
+  assignment:
+
+  research:
+
+  github:
+
+  notes:
+
+  duration: 30 min
+
+  difficulty: Beginner
+
+  status: Published
+
+  next: mech-002
+
+  previous:
