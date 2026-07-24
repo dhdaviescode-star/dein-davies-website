@@ -1,36 +1,59 @@
 <header>
+  <nav class="container">
 
-<nav class="container">
+    <a href="{{ '/' | relative_url }}" class="logo">
+      <img
+        src="{{ '/assets/logos/logo.png' | relative_url }}"
+        alt="Dein Honour Davies Logo"
+      />
+    </a>
 
-<a href="/" class="logo">
+    <button
+      class="menu-toggle"
+      aria-label="Toggle Navigation"
+    >
+      ☰
+    </button>
 
-<img src="/assets/logos/logo.png"
-     alt="Dein Honour Davies Logo">
+    <ul class="nav-links">
 
-</a>
+      <li>
+        <a href="{{ '/#what-i-do' | relative_url }}">
+          What I Do
+        </a>
+      </li>
 
-<button class="menu-toggle">
+      <li>
+        <a href="{{ '/#skills' | relative_url }}">
+          Skills
+        </a>
+      </li>
 
-☰
+      <li>
+        <a href="{{ '/#projects' | relative_url }}">
+          Projects
+        </a>
+      </li>
 
-</button>
+      <li>
+        <a href="{{ '/physics-academy/' | relative_url }}">
+          Physics
+        </a>
+      </li>
 
-<ul class="nav-links">
+      <li>
+        <a href="{{ '/#research' | relative_url }}">
+          Research
+        </a>
+      </li>
 
-<li><a href="/#what-i-do">What I Do</a></li>
+      <li>
+        <a href="{{ '/#contact' | relative_url }}">
+          Contact
+        </a>
+      </li>
 
-<li><a href="/#skills">Skills</a></li>
+    </ul>
 
-<li><a href="/#projects">Projects</a></li>
-
-<li><a href="/physics-academy/">Physics</a></li>
-
-<li><a href="/#research">Research</a></li>
-
-<li><a href="/#contact">Contact</a></li>
-
-</ul>
-
-</nav>
-
+  </nav>
 </header>

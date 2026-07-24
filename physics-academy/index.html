@@ -49,9 +49,12 @@
     />
 
     <!-- Parent Stylesheet -->
-    <link rel="stylesheet" href="../assets/css/site.css" />
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
     <!-- Academy-specific Stylesheet -->
-    <link rel="stylesheet" href="assets/css/academy.css" />
+    <link
+      rel="stylesheet"
+      href="{{ '/physics-academy/assets/css/academy.css' | relative_url }}"
+    />
   </head>
   <body>
     <!-- ====== ACADEMY HEADER ====== -->
@@ -181,8 +184,8 @@
     <button id="backToTopBtn" title="Back to Top">↑</button>
 
     <!-- Parent JavaScript -->
-    <script src="../assets/js/site.js"></script>
+    <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
     <!-- Academy-specific JavaScript -->
-    <script src="assets/js/academy.js"></script>
+    <script src="{{ '/physics-academy/assets/js/academy.js' | relative_url }}"></script>
   </body>
 </html>
