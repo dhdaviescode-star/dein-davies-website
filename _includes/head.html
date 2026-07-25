@@ -33,6 +33,17 @@
       rel="stylesheet"
       href="{{ '/assets/css/site.css' | relative_url }}" />
 
+<!-- ====== NEW: per-page extra stylesheets ======
+     Any page can add its own CSS by listing it in its front matter:
+       extra_css:
+         - /physics-academy/assets/css/academy.css
+     Loads AFTER site.css, so page styles can override shared styles. -->
+{% if page.extra_css %}
+  {% for sheet in page.extra_css %}
+<link rel="stylesheet" href="{{ sheet | relative_url }}" />
+  {% endfor %}
+{% endif %}
+
 <link
       rel="icon"
       href="{{ '/assets/icons/favicon.ico' | relative_url }}" />
