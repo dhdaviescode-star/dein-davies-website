@@ -42,3 +42,23 @@
 </button>
 
 <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
+
+<!-- ====== NEW: per-page extra scripts ======
+     Any page can add its own JS by listing it in its front matter:
+       extra_js:
+         - https://cdn.jsdelivr.net/pyodide/v0.26.1/full/pyodide.js
+         - /physics-academy/newton-laws/assets/js/newton-laws.js
+     Loads AFTER site.js, in the order listed — so Pyodide loads
+     before newton-laws.js, which needs it.
+     The "contains 'http'" check skips relative_url for full external
+     URLs (like the Pyodide CDN link) — relative_url would otherwise
+     wrongly prepend your site's baseurl to it and break the link. -->
+{% if page.extra_js %}
+  {% for script in page.extra_js %}
+    {% if script contains 'http' %}
+<script src="{{ script }}"></script>
+    {% else %}
+<script src="{{ script | relative_url }}"></script>
+    {% endif %}
+  {% endfor %}
+{% endif %}
