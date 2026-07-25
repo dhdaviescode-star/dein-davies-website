@@ -3,14 +3,16 @@
 // Controls the interactive Python calculator with FBD visualization
 // ============================================================
 
-document.addEventListener('DOMContentLoaded', function () {
-    const runButton = document.getElementById('run-button');
-    const outputDiv = document.getElementById('output');
-    const fbdContainer = document.getElementById('fbd-container');
+document.addEventListener("DOMContentLoaded", function () {
+  const runButton = document.getElementById("run-button");
+  const outputDiv = document.getElementById("output");
+  const fbdContainer = document.getElementById("fbd-container");
 
-    // ---- The Python code template with placeholders ----
-    const pythonCodeTemplate = `
+  // ---- The Python code template with placeholders ----
+  const pythonCodeTemplate = `
 # Physics Calculator: Acceleration on a Rough Horizontal Surface
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import io
 import base64
@@ -95,43 +97,57 @@ plt.close(fig)
 print("FBD_IMAGE:" + img_base64)
 `;
 
-    // ---- Main calculation function ----
-    async function runPythonCode() {
-        // 1. Get values from input fields
-        const mass = parseFloat(document.getElementById('mass').value);
-        const appliedForce = parseFloat(document.getElementById('applied-force').value);
-        const coeffFriction = parseFloat(document.getElementById('coeff-friction').value);
+  // ---- Main calculation function ----
+  async function runPythonCode() {
+    // 1. Get values from input fields
+    const mass = parseFloat(document.getElementById("mass").value);
+    const appliedForce = parseFloat(
+      document.getElementById("applied-force").value,
+    );
+    const coeffFriction = parseFloat(
+      document.getElementById("coeff-friction").value,
+    );
 
-        // 2. Validate input
-        if (isNaN(mass) || isNaN(appliedForce) || isNaN(coeffFriction) ||
-            mass <= 0 || appliedForce < 0 || coeffFriction < 0) {
-            outputDiv.textContent = '⚠️ Please enter valid positive numbers for all fields.';
-            fbdContainer.innerHTML = '';
-            return;
-        }
+    // 2. Validate input
+    if (
+      isNaN(mass) ||
+      isNaN(appliedForce) ||
+      isNaN(coeffFriction) ||
+      mass <= 0 ||
+      appliedForce < 0 ||
+      coeffFriction < 0
+    ) {
+      outputDiv.textContent =
+        "⚠️ Please enter valid positive numbers for all fields.";
+      fbdContainer.innerHTML = "";
+      return;
+    }
 
-        // 3. Inject values into the Python code
-        const pythonCode = pythonCodeTemplate
-            .replace(/MASS_PLACEHOLDER/g, mass)
-            .replace(/FORCE_PLACEHOLDER/g, appliedForce)
-            .replace(/FRICTION_PLACEHOLDER/g, coeffFriction);
+    // 3. Inject values into the Python code
+    const pythonCode = pythonCodeTemplate
+      .replace(/MASS_PLACEHOLDER/g, mass)
+      .replace(/FORCE_PLACEHOLDER/g, appliedForce)
+      .replace(/FRICTION_PLACEHOLDER/g, coeffFriction);
 
-        // 4. Show loading state
-        outputDiv.textContent = '⏳ Loading Python environment... (first time may take 5–10 seconds)';
-        fbdContainer.innerHTML = '<p style="color: var(--clr-text-light);">⏳ Generating diagram...</p>';
+    // 4. Show loading state
+    outputDiv.textContent =
+      "⏳ Loading Python environment... (first time may take 5–10 seconds)";
+    fbdContainer.innerHTML =
+      '<p style="color: var(--clr-text-light);">⏳ Generating diagram...</p>';
 
-        try {
-            // 5. Load Pyodide (cached after first load)
-            const pyodide = await loadPyodide({
-                indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.26.1/full/'
-            });
+    try {
+      // 5. Load Pyodide (cached after first load)
+      const pyodide = await loadPyodide({
+        indexURL: "https://cdn.jsdelivr.net/pyodide/v0.26.1/full/",
+      });
 
-            // 6. Install matplotlib (required for FBD)
-            outputDiv.textContent = '⏳ Loading matplotlib... (this may take a moment)';
-            await pyodide.loadPackage('matplotlib');
+      // 6. Install matplotlib (required for FBD)
+      outputDiv.textContent =
+        "⏳ Loading matplotlib... (this may take a moment)";
+      await pyodide.loadPackage("matplotlib");
 
-            // 7. Capture Python print() output
-            pyodide.runPython(`
+      // 7. Capture Python print() output
+      pyodide.runPython(`
 import sys
 from io import StringIO
 
@@ -139,46 +155,46 @@ old_stdout = sys.stdout
 sys.stdout = StringIO()
             `);
 
-            // 8. Execute the main code
-            pyodide.runPython(pythonCode);
+      // 8. Execute the main code
+      pyodide.runPython(pythonCode);
 
-            // 9. Retrieve captured output
-            const result = pyodide.runPython(`
+      // 9. Retrieve captured output
+      const result = pyodide.runPython(`
 output = sys.stdout.getvalue()
 sys.stdout = old_stdout
 output
             `);
 
-            // 10. Parse the output - look for the FBD_IMAGE marker
-            const lines = result.split('\n');
-            let textOutput = '';
-            let imageBase64 = '';
+      // 10. Parse the output - look for the FBD_IMAGE marker
+      const lines = result.split("\n");
+      let textOutput = "";
+      let imageBase64 = "";
 
-            for (const line of lines) {
-                if (line.startsWith('FBD_IMAGE:')) {
-                    imageBase64 = line.substring('FBD_IMAGE:'.length);
-                } else {
-                    textOutput += line + '\n';
-                }
-            }
-
-            // 11. Display the text output
-            outputDiv.textContent = textOutput.trim();
-
-            // 12. Display the FBD image
-            if (imageBase64) {
-                fbdContainer.innerHTML = `<img src="data:image/png;base64,${imageBase64}" alt="Free Body Diagram" style="max-width: 100%; border-radius: 8px; border: 1px solid #e9ecef;" />`;
-            } else {
-                fbdContainer.innerHTML = '<p style="color: var(--clr-text-light);">⚠️ No diagram generated.</p>';
-            }
-
-        } catch (error) {
-            console.error('Pyodide error:', error);
-            outputDiv.textContent = `❌ An error occurred:\n${error.message || error}`;
-            fbdContainer.innerHTML = '';
+      for (const line of lines) {
+        if (line.startsWith("FBD_IMAGE:")) {
+          imageBase64 = line.substring("FBD_IMAGE:".length);
+        } else {
+          textOutput += line + "\n";
         }
-    }
+      }
 
-    // ---- Attach event listener ----
-    runButton.addEventListener('click', runPythonCode);
+      // 11. Display the text output
+      outputDiv.textContent = textOutput.trim();
+
+      // 12. Display the FBD image
+      if (imageBase64) {
+        fbdContainer.innerHTML = `<img src="data:image/png;base64,${imageBase64}" alt="Free Body Diagram" style="max-width: 100%; border-radius: 8px; border: 1px solid #e9ecef;" />`;
+      } else {
+        fbdContainer.innerHTML =
+          '<p style="color: var(--clr-text-light);">⚠️ No diagram generated.</p>';
+      }
+    } catch (error) {
+      console.error("Pyodide error:", error);
+      outputDiv.textContent = `❌ An error occurred:\n${error.message || error}`;
+      fbdContainer.innerHTML = "";
+    }
+  }
+
+  // ---- Attach event listener ----
+  runButton.addEventListener("click", runPythonCode);
 });
