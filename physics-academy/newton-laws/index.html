@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Lecture 1: Newton's Laws"
-description: "Learn how to solve physics problems involving forces, friction, and acceleration on a horizontal surface. Includes interactive Python calculator."
-keywords: "Physics, Newton's Laws, Friction, Acceleration, Nigerian University, PHY105"
+title: "Lecture 1: Newton's Laws & Kinematics"
+description: "Learn how to solve physics problems involving forces, friction, acceleration, and multi-body kinematics."
+keywords: "Physics, Newton's Laws, Kinematics, Acceleration, PHY105"
 extra_css:
   - /physics-academy/newton-laws/assets/css/newton-laws.css
 extra_js:
@@ -10,8 +10,6 @@ extra_js:
   - /physics-academy/newton-laws/assets/js/newton-laws.js
 ---
 
-<!-- ====== LECTURE HEADER (page title/breadcrumb banner — NOT the site nav,
-     that comes from _includes/header.html automatically via the layout) ====== -->
 <header class="lecture-header">
   <div class="container">
     <p class="breadcrumb">
@@ -21,125 +19,29 @@ extra_js:
       <span class="separator">/</span>
       <span class="current">Lecture 1</span>
     </p>
-    <h1>⚛️ Lecture 1: Newton's Laws — Getting Things Moving</h1>
-    <p>
-      Understanding forces, friction, and acceleration on a horizontal
-      surface.
-    </p>
+    <h1>⚛️ Lecture 1: Newton's Laws & Kinematics</h1>
+    <p>Mastering classical mechanics, friction, and dynamic relative motion.</p>
   </div>
 </header>
 
-<!-- ====== MAIN CONTENT ====== -->
 <main>
   <div class="container">
-    <!-- ====== THE BIG QUESTION ====== -->
+
+    <!-- ==========================================
+         PROBLEM 1: FRICTION & NEWTON'S SECOND LAW
+         ========================================== -->
     <section class="content-section">
-      <h2>📝 The Big Question</h2>
+      <h2>📝 Problem 1: Block on a Rough Horizontal Surface</h2>
       <div class="big-question">
-        <strong
-          >"A 5 kg object is placed on a rough horizontal surface. A
-          horizontal force of 30 N is applied. If the coefficient of kinetic
-          friction is 0.4, calculate the acceleration of the
-          object."</strong
-        >
+        <strong>"A 5 kg object is placed on a rough horizontal surface. A horizontal force of 30 N is applied. If the coefficient of kinetic friction is 0.4, calculate the acceleration of the object."</strong>
       </div>
-    </section>
-
-    <!-- ====== INTRODUCTION ====== -->
-    <section class="content-section">
-      <h2>🎙️ Instructor's Introduction</h2>
-      <div class="professor-quote">
-        <p>
-          "Good day, brilliant minds! Welcome back to the channel where we
-          demystify physics, one tough exam question at a time. I'm
-          DHDavies, and today, we're tackling a classic problem that tests
-          your understanding of forces and motion. Don't just look for the
-          answer; let's uncover the beautiful physics principles hiding
-          within!"
-        </p>
-      </div>
-    </section>
-
-    <!-- ====== KEY CONCEPTS ====== -->
-    <section class="content-section">
-      <h2>🧠 What Physics Principle Is Hiding Here?</h2>
-      <p>
-        When you see an object, forces, and a request for acceleration, the
-        first thing that should pop into your mind is
-        <strong>Newton's Second Law of Motion!</strong>
-      </p>
-
-      <div class="key-concept">
-        <h4>🔑 Newton's Second Law (F = ma)</h4>
-        <p>
-          The net force acting on an object is directly proportional to its
-          acceleration and in the same direction as the acceleration.
-        </p>
-        <p>
-          <strong>F<sub>net</sub> = ma</strong>, where:
-        </p>
-        <ul>
-          <li>
-            <strong>F<sub>net</sub></strong> = net force (vector sum of all
-            forces)
-          </li>
-          <li><strong>m</strong> = mass of the object</li>
-          <li><strong>a</strong> = acceleration of the object</li>
-        </ul>
-      </div>
-
-      <div class="key-concept">
-        <h4>🔑 Free Body Diagrams (FBD)</h4>
-        <p>Visualize all forces acting on the object. This helps you:</p>
-        <ul>
-          <li>Identify all forces (weight, normal, applied, friction)</li>
-          <li>Represent forces as vectors from the center of the object</li>
-          <li>Choose a coordinate system (x and y axes)</li>
-        </ul>
-      </div>
-
-      <div class="key-concept">
-        <h4>🔑 Friction (Kinetic)</h4>
-        <p>Kinetic friction opposes ongoing motion. The formula is:</p>
-        <p>
-          <strong>F<sub>friction</sub> = μ<sub>k</sub> × N</strong>, where:
-        </p>
-        <ul>
-          <li>
-            <strong>μ<sub>k</sub></strong> = coefficient of kinetic friction
-          </li>
-          <li>
-            <strong>N</strong> = normal force (on a horizontal surface, N =
-            mg)
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ====== SOLUTION STEPS ====== -->
-    <section class="content-section">
-      <h2>✏️ Solving the Problem</h2>
+      
       <div class="solution-steps">
         <ol>
-          <li>
-            <strong>Draw the Free Body Diagram:</strong> Weight (down),
-            Normal (up), Applied Force (right), Friction (left).
-          </li>
-          <li>
-            <strong>Vertical forces balance:</strong> N = mg = 5 × 9.8 =
-            <strong>49 N</strong>
-          </li>
-          <li>
-            <strong>Calculate friction:</strong> F<sub>friction</sub> = 0.4
-            × 49 = <strong>19.6 N</strong>
-          </li>
-          <li>
-            <strong>Apply Newton's Second Law horizontally:</strong> F<sub
-              >applied</sub
-            >
-            − F<sub>friction</sub> = ma
-          </li>
-          <li><strong>Solve:</strong> 30 − 19.6 = 5a → a = 10.4 / 5</li>
+          <li><strong>Vertical equilibrium:</strong> $N = mg = 5 \text{ kg} \times 9.81 \text{ m/s}^2 = 49.05 \text{ N}$</li>
+          <li><strong>Kinetic friction force:</strong> $f_k = \mu_k \cdot N = 0.4 \times 49.05 \text{ N} = 19.62 \text{ N}$</li>
+          <li><strong>Apply Newton's 2nd Law horizontally:</strong> $F_{\text{net}} = F_{\text{app}} - f_k = 30 \text{ N} - 19.62 \text{ N} = 10.38 \text{ N}$</li>
+          <li><strong>Solve for acceleration:</strong> $a = \frac{F_{\text{net}}}{m} = \frac{10.38}{5} = 2.08 \text{ m/s}^2$</li>
         </ol>
         <div class="final-answer">
           ✅ Final Answer: <span>2.08 m/s²</span>
@@ -147,14 +49,10 @@ extra_js:
       </div>
     </section>
 
-    <!-- ====== INTERACTIVE PYTHON CALCULATOR ====== -->
+    <!-- Interactive Section for Problem 1 -->
     <section class="interactive-box">
-      <h3>🧪 Try It Yourself!</h3>
-      <p class="interactive-subtitle">
-        Change the values below and click
-        <strong>"Calculate Acceleration"</strong> to see how the result
-        changes.
-      </p>
+      <h3>🧪 Interactive Solver: Friction & Acceleration</h3>
+      <p class="interactive-subtitle">Adjust parameters to recalculate dynamics and regenerate the Free Body Diagram.</p>
 
       <div class="input-group">
         <label for="mass">Mass (kg):</label>
@@ -162,84 +60,74 @@ extra_js:
       </div>
       <div class="input-group">
         <label for="applied-force">Applied Force (N):</label>
-        <input
-          type="number"
-          id="applied-force"
-          value="30.0"
-          step="0.1"
-          min="0"
-        />
+        <input type="number" id="applied-force" value="30.0" step="0.1" min="0" />
       </div>
       <div class="input-group">
         <label for="coeff-friction">Coefficient of Kinetic Friction:</label>
-        <input
-          type="number"
-          id="coeff-friction"
-          value="0.4"
-          step="0.01"
-          min="0"
-          max="1"
-        />
+        <input type="number" id="coeff-friction" value="0.4" step="0.01" min="0" max="1" />
       </div>
 
-      <button id="run-button" class="btn btn-primary">
-        🚀 Calculate Acceleration
-      </button>
+      <button id="run-button" class="btn btn-primary">🚀 Calculate Acceleration</button>
 
-      <div id="output">
-        Click "Calculate Acceleration" to run the Python script.
-      </div>
-      <div
-        id="fbd-container"
-        style="
-          margin-top: 1.5rem;
-          min-height: 200px;
-          background: var(--clr-background);
-          border-radius: var(--radius);
-          padding: 1rem;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border: 2px dashed #ced4da;
-        "
-      >
-        <p style="color: var(--clr-text-light)">
-          📐 Free Body Diagram will appear here after calculation.
-        </p>
+      <div id="output">Click "Calculate Acceleration" to run Pyodide execution.</div>
+      <div id="fbd-container" class="diagram-display-box">
+        <p style="color: var(--clr-text-light)">📐 Free Body Diagram will render here.</p>
       </div>
     </section>
 
-    <!-- ====== PYTHON CODE DISPLAY ====== -->
-    <section class="content-section">
-      <h3>🐍 The Python Code Behind the Solution</h3>
-      <p>
-        This is the exact script that runs in your browser to solve the
-        problem. You can copy it and run it yourself!
-      </p>
-      <div class="code-block">
-        <code>
-          # physics_calculator.py # Calculates acceleration of an object on
-          a rough horizontal surface. # --- Input Parameters --- mass = 5.0
-          # kg applied_force = 30.0 # N coefficient_kinetic_friction = 0.4 g
-          = 9.81 # m/s² # --- Calculations --- gravitational_force = mass *
-          g normal_force = gravitational_force kinetic_friction_force =
-          coefficient_kinetic_friction * normal_force if applied_force <=
-          kinetic_friction_force: net_force = 0.0 acceleration = 0.0 else:
-          net_force = applied_force - kinetic_friction_force acceleration =
-          net_force / mass print(f"Final Acceleration: {acceleration:.2f}
-          m/s²")
-        </code>
+    <!-- ==========================================
+         PROBLEM 2: CATCH-UP KINEMATICS
+         ========================================== -->
+    <section class="content-section" style="margin-top: 3rem;">
+      <h2>📝 Problem 2: High-Speed Train & Inspection Car</h2>
+      <div class="big-question">
+        <strong>"A high-speed train traveling along a straight track at a constant speed of 30 m/s passes a stationary inspection car at $t = 0\text{ s}$. The inspection car accelerates uniformly from rest at $2.0\text{ m/s}^2$ up to its top speed of $50\text{ m/s}$, continuing at constant speed thereafter. When and where does it catch the train?"</strong>
+      </div>
+
+      <div class="solution-steps">
+        <ol>
+          <li><strong>Acceleration Phase ($t_1$):</strong> $t_1 = \frac{v_{\text{max}}}{a} = \frac{50}{2.0} = 25\text{ s}$. Car covers $x_{2,1} = \frac{1}{2}(2.0)(25)^2 = 625\text{ m}$.</li>
+          <li><strong>Train position at $t_1$:</strong> $x_{1,1} = (30\text{ m/s})(25\text{ s}) = 750\text{ m}$. Gap remaining: $\Delta x = 750 - 625 = 125\text{ m}$.</li>
+          <li><strong>Phase 2 Relative Velocity:</strong> $v_{\text{rel}} = 50 - 30 = 20\text{ m/s}$. Gap closed in $\Delta t = \frac{125}{20} = 6.25\text{ s}$.</li>
+          <li><strong>Total time & distance:</strong> $t_{\text{total}} = 25 + 6.25 = 31.25\text{ s}$; $x_{\text{total}} = 30 \times 31.25 = 937.5\text{ m}$.</li>
+        </ol>
+        <div class="final-answer">
+          ✅ Catch-Up Point: <span>t = 31.25 s, x = 937.5 m</span>
+        </div>
       </div>
     </section>
 
-    <!-- ====== NAVIGATION ====== -->
-    <div class="nav-links-bottom">
-      <a href="{{ '/physics-academy/' | relative_url }}" class="btn btn-secondary"
-        >⬅ Back to Physics Academy</a
-      >
-      <a href="{{ '/' | relative_url }}" class="btn btn-secondary"
-        >🏠 Back to Home</a
-      >
+    <!-- Interactive Section for Problem 2 -->
+    <section class="interactive-box">
+      <h3>🏎️ Interactive Solver: Catch-Up Kinematics</h3>
+      <p class="interactive-subtitle">Simulate multi-stage relative motion trajectories dynamically.</p>
+
+      <div class="input-group">
+        <label for="train-speed">Train Constant Speed (m/s):</label>
+        <input type="number" id="train-speed" value="30.0" step="1.0" min="1.0" />
+      </div>
+      <div class="input-group">
+        <label for="car-accel">Inspection Car Acceleration (m/s²):</label>
+        <input type="number" id="car-accel" value="2.0" step="0.1" min="0.1" />
+      </div>
+      <div class="input-group">
+        <label for="car-vmax">Inspection Car Max Speed (m/s):</label>
+        <input type="number" id="car-vmax" value="50.0" step="1.0" min="1.0" />
+      </div>
+
+      <button id="run-train-button" class="btn btn-primary">🚀 Run Trajectory Simulation</button>
+
+      <div id="train-output">Click "Run Trajectory Simulation" to evaluate motion curves.</div>
+      <div id="kinematics-plot-container" class="diagram-display-box">
+        <p style="color: var(--clr-text-light)">📊 Kinematics trajectory plot will render here.</p>
+      </div>
+    </section>
+
+    <!-- NAV LINKS -->
+    <div class="nav-links-bottom" style="margin-top: 3rem;">
+      <a href="{{ '/physics-academy/' | relative_url }}" class="btn btn-secondary">⬅ Back to Physics Academy</a>
+      <a href="{{ '/' | relative_url }}" class="btn btn-secondary">🏠 Back to Home</a>
     </div>
+
   </div>
 </main>
